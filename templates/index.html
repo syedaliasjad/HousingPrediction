@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+    <meta charset="UTF-8">
+    <title>Housing price</title>
+      <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"
+</head>
+
+<body>
+<div class="login">
+    <!-- Main Input For Receiving Query to our ML -->
+
+    <h1>Find the best Home for you</h1>
+    <p>Predict the house prices by adding the entries</p>
+    <form action="{{ url_for('predict')}}" method='POST' >
+    <input type="number" name="bedrooms" placeholder = "Number of bedrooms"required="required"/>
+    <input type="number" name="bathrooms" placeholder = "Number of bathrooms"required="required"/>
+    <input type="number" name="floors" placeholder = "Number of floors"required="required"/>
+        <button type="submit"class="btn btn-primary btn-block btn-large">Predict</button>
+
+</form>
+     <br>
+   <br>
+ </div>
+
+{{predition_text}}
+
+
+</body>
+
+</html>
